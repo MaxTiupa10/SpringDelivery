@@ -15,8 +15,10 @@ public class MenuItem {
     private String name;
     @Column(nullable = false)
     private BigDecimal price;
-
-    private Long r
-
-
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id",nullable = false)
+    private Restaurant restaurant;
+    @ManyToOne
+    @JoinColumn(name = "category_id",nullable = false )
+    private Category category;
 }
